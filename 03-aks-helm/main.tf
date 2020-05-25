@@ -4,6 +4,8 @@ provider "azurerm" {
 
 provider "helm" {
   version = "~> 0.9"
+  install_tiller = true
+
   kubernetes {
     host     = "${azurerm_kubernetes_cluster.cluster.kube_config.0.host}"
 
