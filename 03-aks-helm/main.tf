@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 provider "helm" {
-  version = "0.9.0"
+  version = "~> 0.9"
   kubernetes {
     host     = "${azurerm_kubernetes_cluster.cluster.kube_config.0.host}"
 
