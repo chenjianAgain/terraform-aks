@@ -13,17 +13,17 @@ provider "helm" {
   }
 }
 
-variable "service_principal_client_id" {
-  description = "The Client ID for the Service Principal"
-}
+# variable "service_principal_client_id" {
+#   description = "The Client ID for the Service Principal"
+# }
 
-variable "service_principal_client_secret" {
-  description = "The Client Secret for the Service Principal"
-}
+# variable "service_principal_client_secret" {
+#   description = "The Client Secret for the Service Principal"
+# }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "aks-cluster"
-  location = "uksouth"
+  name     = "aks-test"
+  location = "japaneast"
 }
 
 resource "azurerm_network_security_group" "sg" {
@@ -88,8 +88,8 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   }
 
   service_principal {
-    client_id     = "${var.service_principal_client_id}"
-    client_secret = "${var.service_principal_client_secret}"
+    client_id     = "7534c854-5e5d-41b2-b39f-36ad76fd79e3"
+    client_secret = "EX1o5mEfA8Y_lIZP2.Zi40_992bOQ67_Nx"
   }
 
   network_profile {
